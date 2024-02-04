@@ -3,7 +3,6 @@ import prismadb from "@/lib/prismadb";
 import { OrderClient } from "./components/client";
 import { OrderColumn } from "./components/columns";
 import { formatter } from "@/lib/utils";
-import { number } from "zod";
 
 const OrdersPage = async ({
     params

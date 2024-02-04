@@ -81,6 +81,28 @@ export async function PATCH(
   }
 };
 
+/**
+ * @swagger
+ *  /api/{storeId}/categories/{categoryId}:
+ *   delete:
+ *      tags:
+ *       - categories
+ *      summary: delete category by store ID
+ *      parameters:
+ *       - name: storeId
+ *         in: path
+ *         description: ID of store
+ *         required: true
+ *         schema:
+ *           type: string
+ *      description: delete a store by ID
+ *      responses:
+ *        200:
+ *          description: Store found
+ *        400:
+ *          description: Store ID is required
+ */
+
 export async function DELETE(
   req: Request,
   { params }: { params: { storeId: string; categoryId: string } }

@@ -14,7 +14,41 @@ const corsHeaders = {
         return NextResponse.json({}, { headers: corsHeaders });
     };
 
-    
+    /**
+ * @swagger
+ *  /api/{storeId}/checkout:
+ *   post:
+ *      tags:
+ *       - checkout
+ *      summary: Post checkout by store ID
+ *      parameters:
+ *       - name: storeId
+ *         in: path
+ *         description: ID of store
+ *         required: true
+ *         schema:
+ *           type: string
+ *      description: Get a store by ID
+ *      requestBody:
+ *        content:
+ *          application/json:
+ *             schema:
+ *                type: object
+ *                properties:
+ *                    label:
+ *                      type: string
+ *                    imageUrl:
+ *                      type: string
+ *                required:
+ *                - label
+ *                - imageUrl
+ *      responses:
+ *        200:
+ *          description: Store found
+ *        400:
+ *          description: Store ID is required
+ */
+
     export async function POST(
         req: Request,
         { params }: {params : {storeId: string}}
